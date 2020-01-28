@@ -1,7 +1,19 @@
 <?php
+require 'Connection.php';
+require 'Task.php';
+
 class TaskDAO {
-    public function getAllTasks($pdo){
-        $statement = $pdo->prepare('select * from todo');
+    private $pdo;
+
+    public function __construct()
+    {
+        $connection = new Connection();
+        
+        $this->pdo = $connection->connectToDb();
+    }
+
+    public function getAllTasks(){
+        $statement = $this->pdo->prepare('select * from todo');
     
         $statement->execute();
     
