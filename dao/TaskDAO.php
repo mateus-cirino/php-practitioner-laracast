@@ -1,15 +1,13 @@
 <?php
-require 'Connection.php';
-require 'Task.php';
+require 'database/Connection.php';
+require 'model/Task.php';
 
 class TaskDAO {
     private $pdo;
 
     public function __construct()
-    {
-        $connection = new Connection();
-        
-        $this->pdo = $connection->connectToDb();
+    {   
+        $this->pdo = Connection::make();
     }
 
     public function getAllTasks(){

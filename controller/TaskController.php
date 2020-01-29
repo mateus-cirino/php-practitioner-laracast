@@ -1,5 +1,5 @@
 <?php
-require 'TaskDAO.php';
+require 'dao/TaskDAO.php';
 
 class TaskController {
         public function index() {

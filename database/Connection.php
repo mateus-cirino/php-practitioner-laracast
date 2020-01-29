@@ -1,6 +1,7 @@
 <?php
 class Connection{
-    public function connectToDb(){
+
+    public static function make(){
         try {
             $pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=practitioner', 'root', '');
             return $pdo;
@@ -8,5 +9,6 @@ class Connection{
             die($e->getMessage());
         }    
     }
+
 }
 ?>
