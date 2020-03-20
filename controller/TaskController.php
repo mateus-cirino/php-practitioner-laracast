@@ -3,7 +3,7 @@ require 'dao/TaskDAO.php';
 
 class TaskController {
     public function index() {
-        $tasks = taskDAO::getAllTasks();
+        $tasks = TaskDAO::getAllTasks();
 
     	return $tasks;
     }
