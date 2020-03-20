@@ -6,7 +6,6 @@ class Task {
     private $description;
     private $completed;
 
-
     public function getId(){
         return $this->id;
     }
