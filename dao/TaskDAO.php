@@ -3,15 +3,12 @@ require 'database/Connection.php';
 require 'model/Task.php';
 
 class TaskDAO {
-    private $pdo;
+    private static $pdo;
+    
+    public static function getAllTasks(){
+        self::$pdo = Connection::make();
 
-    public function __construct()
-    {   
-        $this->pdo = Connection::make();
-    }
-
-    public function getAllTasks(){
-        $statement = $this->pdo->prepare('select * from todo');
+        $statement = self::$pdo->prepare('select * from todo');
     
         $statement->execute();
     
