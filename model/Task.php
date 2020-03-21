@@ -1,10 +1,12 @@
 <?php
 
 class Task {
+    static $table = "todo";
+    static $class = "Task";
     
-    private $id;
-    private $description;
-    private $completed;
+    protected $id;
+    protected $description;
+    protected $completed;
 
     public function getId(){
         return $this->id;
