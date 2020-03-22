@@ -4,8 +4,16 @@ class Connection{
     public static function make()
     {
         try {
+            $config = require('env.php');
             
-            $pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=practitioner', 'root', '');
+            $pdo = new PDO(
+                $config['connection'] . ';'
+                . "port=" . $config['port'] . ';'
+                . "dbname=" . $config['name'],
+                $config['user'],
+                $config['password'],
+                $config['options']
+            );
             
             return $pdo;
 
